@@ -11,11 +11,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev-start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://localhost:3000",
+  "proxy": "https://pixel-helper-api.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },

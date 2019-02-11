@@ -36,7 +36,7 @@ class Navbar extends Component {
                     </a>
                 <div className="middle">
                     <form onSubmit={this.handleSubmit}>
-                        <input type="text" name="searchValue" onChange={this.handleChange} value={searchValue} placeholder="Mountains" />
+                        <input className="search" type="text" name="searchValue" onChange={this.handleChange} value={searchValue} placeholder="Mountains" />
                         <button type="submit">Search</button>
                     </form>
                 </div>

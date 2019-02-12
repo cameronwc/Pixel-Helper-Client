@@ -116,6 +116,15 @@ nav a {
   text-decoration: underline;
 }
 
+@media (max-width: 415px) {
+  .middle input {
+    width: 60%;
+  }
+  .middle button {
+    width: 30%;
+  }
+}
+
 /* Spinner */
 .spinner {
   margin: 0 auto;

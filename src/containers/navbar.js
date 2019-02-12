@@ -34,16 +34,16 @@ class Navbar extends Component {
                     {/* <img src="" alt="Pixel Helper logo" /> */}
                     PIXEL HELPER
                     </a>
+                <div className="right">
+                    <a href="https://pixel-helper-api.herokuapp.com/api">
+                        API
+                    </a>
+                </div>
                 <div className="middle">
                     <form onSubmit={this.handleSubmit}>
                         <input className="search" type="text" name="searchValue" onChange={this.handleChange} value={searchValue} placeholder="Mountains" />
                         <button type="submit">Search</button>
                     </form>
-                </div>
-                <div className="right">
-                    <a href="https://localhost:3000/api">
-                        API
-                    </a>
                 </div>
             </nav>
         )

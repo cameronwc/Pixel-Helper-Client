@@ -8,7 +8,7 @@ class PictureGrid extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false,
+            isLoading: true,
             url: "/api"
         }
         this.chunkArray = chunkArray.bind(this);

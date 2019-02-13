@@ -2,6 +2,8 @@
 
 :root {
   --grey: rgb(76, 82, 79);
+  --yellow: #E8DB7D;
+  --blue: #1f2d3d;
 }
 body {
   margin: 0;
@@ -47,7 +49,7 @@ body {
 
 /* Navbar */
 nav {
-  background-color: #1f2d3d;
+  background-color: var(--blue);
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
@@ -56,7 +58,7 @@ nav {
 }
 
 nav a {
-  color: #E8DB7D;
+  color: ;
 }
 
 .left {
@@ -66,6 +68,7 @@ nav a {
 .middle {
   min-width: 70vw;
   padding: 0px 1rem;
+  margin: 0 auto;
 }
 
 .middle * {
@@ -82,9 +85,10 @@ nav a {
   border-right-width: 0px;
   padding-left: 16px;
   border-color: var(--grey);
+  padding: 1%;
 }
 .middle button {
-  width: 12%;
+  width: 13%;
   outline: none;
   border: none !important;
   background-color: white;
@@ -94,34 +98,24 @@ nav a {
   border-left-width: 0px;
   border-color: var(--grey);
   transition: all 0.3s ease-in-out;
+  padding: 1%;
 }
 
 .middle button:hover {
-  cursor: pointer;
-  color: #1f2d3d;
-  background-color: #E8DB7D;
-}
-
-.right {
-  padding-right: 2rem;
-}
-
-.logo {
-  text-decoration: none;
-  transition: text-decoration 0.2s ease-in;
-}
-
-.logo:hover {
-  cursor: pointer;
-  text-decoration: underline;
+  background-color: var(--yellow);
+  color: var(--blue);
 }
 
 @media (max-width: 415px) {
   .middle input {
+    margin-top: 3%;
     width: 60%;
   }
   .middle button {
     width: 30%;
+  }
+  .picture-grid .container {
+    width: 95%;
   }
 }
 
@@ -140,4 +134,69 @@ nav a {
 @keyframes spin {
   from {transform: rotate(0deg)}
   to{transform: rotate(360deg)}
+}
+
+.search-box {
+  height: 40vh;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUyNDE0fQ');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.header-body {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--yellow);
+  text-shadow: 4px 0px 4px var(--blue);
+}
+
+.nav h1, .nav h3 {
+  margin-top: 0;
+}
+
+.nav .right {
+  padding-right: 16px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.nav a {
+  color: var(--yellow);
+  text-decoration: none;
+}
+
+.nav {
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchBar {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picture-grid .title {
+  text-shadow: none;
+  color: var(--blue);
+  text-align: center;
 }

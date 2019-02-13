@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from './navbar';
 // import PictureGrid from './pictureGrid';
-import PictureGrid from './pictureGridv2';  
+import PictureGrid from './pictureGrid';  
+import Search from './search';
 import { connect } from 'react-redux';
 import { searchPictures } from "../store/actions/search";
 import { removePictures } from "../store/actions/pictures";
@@ -18,18 +19,20 @@ class Main extends Component {
 
     handleData = (searchValue) => {
         this.setState({
-            url: `/api?q=${searchValue}`
+            url: `/api?q=${searchValue}`,
+            searchValue: searchValue
         });
         this.props.removePictures();
         this.props.searchPictures(searchValue);
     }
 
     render() {
-        let { url } = this.state;
+        let { url, searchValue } = this.state;
         return (
             <div className="main">
-                <Navbar handleData={this.handleData} />
-                <PictureGrid url={url} />
+                {/* <Navbar handleData={this.handleData} /> */}
+                <Search handleData={this.handleData}/>
+                <PictureGrid url={url} searchValue={searchValue} />
             </div>
         );
     }

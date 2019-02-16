@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import PictureGrid from './pictureGrid';
 import { connect } from 'react-redux';
 import { searchPictures } from "../store/actions/search";
 import { removePictures } from "../store/actions/pictures";
@@ -28,7 +27,6 @@ class Main extends Component {
         })
     }
 
-
     render() {
         let { searchValue } = this.state;
         return (
@@ -38,7 +36,7 @@ class Main extends Component {
                         <div className="left">
                             <div className="title">
                                 <a href="/">
-                                    <h1>Pixel Helper</h1>
+                                    <h3>Pixel Helper</h3>
                                 </a>
                             </div>
                         </div>
@@ -51,7 +49,7 @@ class Main extends Component {
                     <div className="header-body">
                         <div className="searchBar">
                             <div className="title">
-                                <h2>Find the perfect picture...</h2>
+                                <h1>Find the perfect picture for:</h1>
                             </div>
                             <div className="middle">
                                 <form onSubmit={this.handleSubmit}>

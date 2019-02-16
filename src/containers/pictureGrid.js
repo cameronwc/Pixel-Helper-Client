@@ -17,14 +17,6 @@ class PictureGrid extends Component {
         this.onWindowHitBottom();
     }
 
-    handleClose() {
-        this.setState({ show: false });
-    }
-
-    handleShow() {
-        this.setState({ show: true });
-    }
-
     static getDerivedStateFromProps(nextProps, prevState) {
         if (nextProps.url !== prevState.url) {
             return {
@@ -45,18 +37,14 @@ class PictureGrid extends Component {
         }
     }
 
-    fillPictureGrid(currentPixels = 0) {
+    fillPictureGrid() {
         let { pictures, pageCount } = this.props;
         let { url } = this.state;
-        this.setState({
-            isLoading: true
-        })
-        let newPictures = this.props.fetchPictures(pictures, url, pageCount)
-        newPictures.then(() => {
+        this.setState({ isLoading: true })
+        let updatedPictures = this.props.fetchPictures(pictures, url, pageCount)
+        updatedPictures.then(() => {
             setTimeout(() => {
-                this.setState({
-                    isLoading: false
-                })
+                this.setState({ isLoading: false })
             }, 1000)
         })
     }
@@ -65,15 +53,16 @@ class PictureGrid extends Component {
         const { pictures } = this.props;
         let pictureList = <div className="spinner"></div>
         if (pictures != null) {
-            pictureList = pictures.map(p => (
-                <PictureItem photo={p} key={p.id} />
-            ))
+            pictureList = pictures.map(p => ( <PictureItem photo={p} key={p.id} /> ))
             pictureList = this.chunkArray(pictureList, 4);
             pictureList = pictureList.map((p) => (
                 <div className="col" key={p.id}>
                     {p}
                 </div>
             ));
+        }
+        if(pictures.length === 0) {
+            pictureList = <h2>No results found. Please try a different search query.</h2>
         }
         return pictureList;
     }
@@ -99,9 +88,9 @@ class PictureGrid extends Component {
         let loader = <div className="spinner"></div>
         if (!isLoading) {
             loader = null;
-        }
-        if (searchValue !== "") {
-            searchValue = <h2>Displaying pictures for: <span className="query">{searchValue}</span></h2>
+            // if (searchValue !== "") {
+            //     searchValue = <h2>Displaying pictures for: <span className="query">{searchValue}</span></h2>
+            // }
         }
 
         return (

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navbar from './navbar';
 // import PictureGrid from './pictureGrid';
 import PictureGrid from './pictureGrid';  
 import Search from './search';
@@ -30,7 +29,6 @@ class Main extends Component {
         let { url, searchValue } = this.state;
         return (
             <div className="main">
-                {/* <Navbar handleData={this.handleData} /> */}
                 <Search handleData={this.handleData}/>
                 <PictureGrid url={url} searchValue={searchValue} />
             </div>

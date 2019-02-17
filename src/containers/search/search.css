@@ -85,7 +85,7 @@
 
 @media (max-width: 415px) {
     .header-body {
-        max-width: 375px;
+        max-width: 350px;
         margin: 0 auto;
     }
     .searchBar form input {

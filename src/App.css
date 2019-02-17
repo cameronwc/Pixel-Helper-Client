@@ -20,6 +20,8 @@ h1 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 15px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 @media (max-width: 415px){
@@ -38,16 +40,6 @@ h1 {
   .pictures {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
 }
 
 /* Picture Grid */

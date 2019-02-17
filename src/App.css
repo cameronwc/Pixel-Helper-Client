@@ -141,6 +141,12 @@ h1 {
   position: fixed;
   bottom: 16px;
   right: 16px;
+  transition: all 0.3s ease-in;
+}
+
+.backToTop:hover {
+  background-color: var(--yellow);
+  color: var(--blue);
 }
 
 /* Spinner */

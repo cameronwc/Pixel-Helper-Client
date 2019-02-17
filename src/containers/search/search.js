@@ -42,6 +42,9 @@ class Main extends Component {
                             </div>
                         </div>
                         <div className="right">
+                            <a href="https://github.com/cameronwc/Pixel-Helper-Client.git">
+                                <h3>GITHUB</h3>
+                            </a>
                             <a href="https://pixel-helper-api.herokuapp.com/api">
                                 <h3>API</h3>
                             </a>

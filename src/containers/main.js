@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import PictureGrid from './pictureGrid';
 import PictureGrid from './pictureGrid';  
-import Search from './search';
+import Search from './search/search';
 import UpArrow from '../components/up-arrow';
 import { connect } from 'react-redux';
 import { searchPictures } from "../store/actions/search";

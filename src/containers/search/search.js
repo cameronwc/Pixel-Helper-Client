@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchPictures } from "../store/actions/search";
-import { removePictures } from "../store/actions/pictures";
+import { searchPictures } from "../../store/actions/search";
+import { removePictures } from "../../store/actions/pictures";
+import './search.css';
 
 class Main extends Component {
     constructor(props) {
@@ -51,12 +52,10 @@ class Main extends Component {
                             <div className="title">
                                 <h1>Find the perfect picture for:</h1>
                             </div>
-                            <div className="middle">
-                                <form onSubmit={this.handleSubmit}>
-                                    <input className="search" type="text" name="searchValue" onChange={this.handleChange} value={searchValue} placeholder="Mountains" />
-                                    <button type="submit">Search</button>
-                                </form>
-                            </div>
+                            <form onSubmit={this.handleSubmit}>
+                                <input className="search" type="text" name="searchValue" onChange={this.handleChange} value={searchValue} placeholder="Mountains" />
+                                <button type="submit">Search</button>
+                            </form>
                         </div>
                     </div>
                 </div>

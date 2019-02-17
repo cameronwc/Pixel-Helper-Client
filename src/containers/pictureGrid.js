@@ -53,16 +53,10 @@ class PictureGrid extends Component {
         const { pictures } = this.props;
         let pictureList = <div className="spinner"></div>
         if (pictures != null) {
-            pictureList = pictures.map(p => ( <PictureItem photo={p} key={p.id} /> ))
+            pictureList = pictures.map(p => {
+                return <PictureItem photo={p} key={p.id} />
+            });
             pictureList = this.chunkArray(pictureList, 4);
-            pictureList = pictureList.map((p) => (
-                <div className="col" key={p.id}>
-                    {p}
-                </div>
-            ));
-        }
-        if(pictures.length === 0) {
-            pictureList = <h2>No results found. Please try a different search query.</h2>
         }
         return pictureList;
     }
@@ -88,18 +82,15 @@ class PictureGrid extends Component {
         let loader = <div className="spinner"></div>
         if (!isLoading) {
             loader = null;
-            // if (searchValue !== "") {
-            //     searchValue = <h2>Displaying pictures for: <span className="query">{searchValue}</span></h2>
-            // }
         }
 
         return (
             <div className="picture-grid" id="picture-grid">
                 <div className="container">
                     <div className="title">
-                        {searchValue}
+                        <h2>{searchValue}</h2>
                     </div>
-                    <div className="row">
+                    <div className="pictures">
                         {pictureList}
                     </div>
                 </div>

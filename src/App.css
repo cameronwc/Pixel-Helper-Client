@@ -129,6 +129,19 @@ h1 {
   }
 }
 
+/* Back To Top */
+
+.backToTop {
+  background-color: var(--blue);
+  color: var(--yellow);
+  font-size: 2em;
+  border-radius: 5px;
+  padding: 1%;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+
 /* Spinner */
 
 .spinner {

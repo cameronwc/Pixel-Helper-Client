@@ -34,7 +34,7 @@ h1 {
   }
 }
 
-@media(max-width: 1081px){
+@media(max-width: 1921px){
   .pictures {
     grid-template-columns: repeat(4, 1fr);
   }

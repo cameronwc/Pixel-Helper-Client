@@ -11,7 +11,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            url: '/api',
+            url: 'https://pixel-helper-api.herokuapp.com/api',
             searchValue: ''
         }
         this.handleData = this.handleData.bind(this);
@@ -19,7 +19,7 @@ class Main extends Component {
 
     handleData = (searchValue) => {
         this.setState({
-            url: `/api?q=${searchValue}`,
+            url: `https://pixel-helper-api.herokuapp.com/api?q=${searchValue}`,
             searchValue: searchValue
         });
         this.props.removePictures();

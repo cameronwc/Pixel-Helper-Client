@@ -9,7 +9,7 @@ class PictureGrid extends Component {
         super(props);
         this.state = {
             isLoading: true,
-            url: "/api",
+            url: "https://pixel-helper-api.herokuapp.com/api",
             searchValue: ""
         }
         this.chunkArray = chunkArray.bind(this);

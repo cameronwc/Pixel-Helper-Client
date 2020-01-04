@@ -21,14 +21,20 @@ export const fetchPictures = (pictures, url, pageCount) => {
         return fetch(url)
         .then((res) => res.json())
         .then((newPictures) => {
-            pictures.push.apply(pictures, newPictures);
+            const outputPictures = filterPictures(pictures, newPictures);
+            console.log(outputPictures)
             pageCount++;
-            return dispatch(loadPictures(pictures, pageCount));
+            return dispatch(loadPictures(outputPictures, pageCount));
         })
         .catch((err) => {
             dispatch(addError(err.message));
         })
     };
+}
+
+const filterPictures = (oldPics, newPics) => {
+    oldPics.push.apply(oldPics, newPics);
+    return [... new Set(oldPics)];
 }
 
 export const removePictures = () => {

@@ -1,18 +1,51 @@
-import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Main from './containers/main';
-import { Provider } from 'react-redux';
-import { configureStore } from "./store";
+import Search from './components/search'
+import Results from './components/results'
+import React from 'react';
 
-const store = configureStore();
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.url = 'https://pixel-helper-api.herokuapp.com/api'
+    this.fetchPictures = this.fetchPictures.bind(this)
+    this.search = this.search.bind(this)
+    this.updateTerm = this.updateTerm.bind(this)
+    
+    this.state = {
+      'pictures': []
+    }
+  }
+  
+  componentDidMount() {
+    this.fetchPictures(this.url)
+  }
+
+  fetchPictures(url) {
+    return fetch(url)
+      .then((res) => res.json())
+      .then((newPictures) => {
+        this.setState({'pictures': newPictures});
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
+  search() {
+    this.fetchPictures(this.url + `?q=${this.state.term}`);
+  }
+
+  updateTerm(term) {
+    this.setState({'term': term});
+  }
+
   render() {
     return (
-      <Provider store={store}>
-        <div className="App">
-          <Main />
-        </div>
-      </Provider>
+      <div className="App">
+        <Search search={this.search} updateTerm={this.updateTerm} />
+        <Results pictures={this.state.pictures} />
+      </div>
     );
   }
 }

@@ -1,10 +1,11 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { DownloadIcon, AdjustmentsIcon } from '@heroicons/react/solid'
+import Loader from '../loader'
 
 export default function Results(props) {
     return (
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2 mx-2">
-            {props.pictures.map((photo) => (
+            {props.pictures.length == 0 ? <Loader /> : props.pictures.map((photo) => (
                 <li
                     key={photo.id}
                     className="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200"

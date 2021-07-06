@@ -115,6 +115,7 @@ class Search extends React.Component {
                         </Fragment>
                       ) : (
                         <a
+                          key={item}
                           href={this.navigation[item]}
                           className="text-white hover:bg-green-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium"
                         >

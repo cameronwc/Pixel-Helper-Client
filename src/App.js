@@ -38,11 +38,12 @@ class App extends React.Component {
   }
 
   search() {
+    this.setState({'pictures': []})
     this.fetchPictures();
   }
 
   updateTerm(term) {
-    this.setState({'term': term, 'page': 1, 'pictures': []});
+    this.setState({'term': term, 'page': 1});
   }
 
   hitBottom() {
@@ -54,6 +55,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Search search={this.search} updateTerm={this.updateTerm} />
+        <p>Completely free images. Use anywhere, no attribution or license necessary.</p>
         <Results pictures={this.state.pictures} hitBottom={this.hitBottom} />
       </div>
     );

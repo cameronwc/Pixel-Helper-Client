@@ -55,7 +55,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Search search={this.search} updateTerm={this.updateTerm} />
-        <p className='text-gray-500 py-4'>Completely free images. Use anywhere, no attribution or license necessary.</p>
+        <p className='text-gray-500 py-4 pt-20'>Completely free images. Use anywhere, no attribution or license necessary.</p>
         <Results pictures={this.state.pictures} hitBottom={this.hitBottom} />
       </div>
     );

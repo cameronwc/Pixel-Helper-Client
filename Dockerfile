@@ -8,6 +8,6 @@ CMD npm run test
 FROM node:14-buster-slim
 USER node
 WORKDIR package
-COPY --from=test /package .
+COPY --chown=node:node --from=test /package .
 RUN npm i --only=prod
 CMD npm run start

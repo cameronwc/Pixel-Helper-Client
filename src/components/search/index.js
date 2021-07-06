@@ -30,7 +30,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div className="bg-gray-100">
+      <div className="fixed w-full bg-gray-100 z-20">
         <div className="bg-green-600">
           <Disclosure as="nav" className="bg-green-600 border-b border-green-300 border-opacity-25 lg:border-none">
             {({ open }) => (

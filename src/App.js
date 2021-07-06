@@ -42,7 +42,7 @@ class App extends React.Component {
   }
 
   updateTerm(term) {
-    this.setState({'term': term});
+    this.setState({'term': term, 'page': 1, 'pictures': []});
   }
 
   hitBottom() {

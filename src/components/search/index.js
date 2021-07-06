@@ -77,7 +77,7 @@ class Search extends React.Component {
                             <input
                               id="search"
                               className="block w-full bg-white py-2 pl-10 pr-3 border border-transparent rounded-md leading-5 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-600 focus:ring-white focus:border-white sm:text-sm"
-                              placeholder="Search"
+                              placeholder="Mountains"
                               type="search"
                               name="search"
                               onKeyUp={(e) => this.props.updateTerm(e.target.value)}

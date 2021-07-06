@@ -10,21 +10,27 @@ class App extends React.Component {
     this.fetchPictures = this.fetchPictures.bind(this)
     this.search = this.search.bind(this)
     this.updateTerm = this.updateTerm.bind(this)
+    this.hitBottom = this.hitBottom.bind(this)
     
     this.state = {
-      'pictures': []
+      'pictures': [],
+      'page': 1,
+      'term': 'mountains'
     }
   }
   
   componentDidMount() {
-    this.fetchPictures(this.url)
+    this.fetchPictures()
   }
 
-  fetchPictures(url) {
+  fetchPictures() {
+    let url = this.url + `?q=${this.state.term}&page=${this.state.page}`
+    let currentPictures = this.state.pictures
     return fetch(url)
       .then((res) => res.json())
       .then((newPictures) => {
-        this.setState({'pictures': newPictures});
+        let newSet = currentPictures.concat(newPictures)
+        this.setState({'pictures': newSet});
       })
       .catch((err) => {
         console.log(err);
@@ -32,18 +38,23 @@ class App extends React.Component {
   }
 
   search() {
-    this.fetchPictures(this.url + `?q=${this.state.term}`);
+    this.fetchPictures();
   }
 
   updateTerm(term) {
     this.setState({'term': term});
   }
 
+  hitBottom() {
+    this.setState({'page': this.state.page + 1})
+    this.fetchPictures()
+  }
+
   render() {
     return (
       <div className="App">
         <Search search={this.search} updateTerm={this.updateTerm} />
-        <Results pictures={this.state.pictures} />
+        <Results pictures={this.state.pictures} hitBottom={this.hitBottom} />
       </div>
     );
   }
